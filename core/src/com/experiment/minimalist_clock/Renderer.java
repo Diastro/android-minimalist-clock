@@ -14,10 +14,10 @@ public class Renderer {
     private OrthographicCamera cam;
     private ShapeRenderer shapeRenderer;
 
-    public int SCREEN_WIDTH = Gdx.graphics.getWidth();
-    public int SCREEN_HEIGHT = Gdx.graphics.getHeight();
-    public int SCREEN_MIDDLE_X = SCREEN_WIDTH/2;
-    public int SCREEN_MIDDLE_Y = SCREEN_HEIGHT/2;
+    public int SCREEN_WIDTH;
+    public int SCREEN_HEIGHT;
+    public int SCREEN_MIDDLE_X;
+    public int SCREEN_MIDDLE_Y;
     public int CLOCK_RADIUS = 0;
 
     public Renderer(Environment environment) {
@@ -120,6 +120,11 @@ public class Renderer {
     }
 
     public void setCamera(){
+        SCREEN_WIDTH = Gdx.graphics.getWidth();
+        SCREEN_HEIGHT = Gdx.graphics.getHeight();
+        SCREEN_MIDDLE_X = SCREEN_WIDTH/2;
+        SCREEN_MIDDLE_Y = SCREEN_HEIGHT/2;
+
         cam = new OrthographicCamera();
         cam.setToOrtho(true, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         shapeRenderer = new ShapeRenderer();
