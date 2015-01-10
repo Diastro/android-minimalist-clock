@@ -58,11 +58,11 @@ public class Renderer {
 
         int startDeg = 270;
         // Hours
-        drawArc(startDeg, hoursDeg, CLOCK_RADIUS, 14, 100, white);
-        drawHandle(hoursDeg + 270, CLOCK_RADIUS, 70, 100, white);
+        drawArc(startDeg, hoursDeg + (30/360.0f*minutesDeg), CLOCK_RADIUS, 14, 100, white);
+        drawHandle(hoursDeg + 270  + (30/360.0f*minutesDeg), CLOCK_RADIUS, 70, 100, white);
 
         // Minutes
-        drawArc(startDeg, minutesDeg, CLOCK_RADIUS-15, 8, 100, light_grey);
+        drawArc(startDeg, minutesDeg + (6/360.0f*secondsDeg), CLOCK_RADIUS-15, 8, 100, light_grey);
 
         // Seconds
         drawArc(startDeg, secondsDeg, CLOCK_RADIUS-36, 8, 100, dark_grey);
@@ -76,7 +76,7 @@ public class Renderer {
         }
 
         // Second's handle
-        drawHandle(minutesDeg + 270, CLOCK_RADIUS-70, 63, 100, light_grey);
+        drawHandle(minutesDeg + 270 + (6/360.0f*secondsDeg), CLOCK_RADIUS-70, 63, 100, light_grey);
 
         // Font
         // Reference : https://gamedev.stackexchange.com/questions/72682/exception-in-thread-lwjgl-application
